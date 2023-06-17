@@ -37,7 +37,7 @@ jobs:
           path: build/${{ matrix.targetPlatform }}
       - name: Send Artifacts to Slack
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{
             "text": "Build artifacts for ${{ matrix.targetPlatform }} are available",
